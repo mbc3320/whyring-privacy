@@ -50,8 +50,31 @@
     nav a:hover { background: rgba(242, 138, 22, .22); }
     .hero {
       display: grid;
-      gap: 16px;
+      gap: 24px;
       margin-bottom: 32px;
+      align-items: center;
+    }
+    .hero-top {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+    @media (max-width: 720px) {
+      .hero-top { grid-template-columns: 1fr; }
+    }
+    .hero-text {
+      display: grid;
+      gap: 16px;
+    }
+    .hero-icon {
+      width: 160px;
+      height: 160px;
+      border-radius: 36px;
+      box-shadow: 0 12px 32px rgba(158, 95, 0, .18);
+    }
+    @media (max-width: 720px) {
+      .hero-icon { width: 120px; height: 120px; border-radius: 28px; }
     }
     .pill {
       display: inline-flex;
@@ -126,6 +149,61 @@
       font-size: 14px;
       color: var(--muted);
     }
+
+    /* Screenshots gallery */
+    .screenshots {
+      margin-top: 16px;
+    }
+    .screenshots-scroll {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding: 8px 4px 24px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .screenshots-scroll::-webkit-scrollbar {
+      height: 6px;
+    }
+    .screenshots-scroll::-webkit-scrollbar-track {
+      background: rgba(0,0,0,.06);
+      border-radius: 3px;
+    }
+    .screenshots-scroll::-webkit-scrollbar-thumb {
+      background: rgba(242, 138, 22, .4);
+      border-radius: 3px;
+    }
+    .shot {
+      flex: 0 0 auto;
+      width: 240px;
+      scroll-snap-align: start;
+    }
+    .shot img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.15);
+      display: block;
+    }
+    .shot-label {
+      text-align: center;
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    @media (max-width: 720px) {
+      .shot { width: 200px; }
+    }
+
+    /* Promo image */
+    .promo-img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 12px 32px rgba(158, 95, 0, .15);
+      display: block;
+    }
+
     footer {
       margin-top: 32px;
       color: var(--muted);
@@ -148,9 +226,15 @@
     </nav>
 
     <section class="hero">
-      <span class="pill">Why Ring</span>
-      <h1>烦人的节假日闹钟</h1>
-      <p class="lead">让闹钟知道今天该不该响。面向中国大陆节假日、补班日、大小周、轮班等场景的本地智能闹钟工具。</p>
+      <div class="hero-top">
+        <div class="hero-text">
+          <span class="pill">Why Ring</span>
+          <h1>烦人的节假日闹钟</h1>
+          <p class="lead">让闹钟知道今天该不该响。面向中国大陆节假日、补班日、大小周、轮班等场景的本地智能闹钟工具。</p>
+        </div>
+        <img src="./images/icon.png" alt="App 图标" class="hero-icon">
+      </div>
+      <img src="./images/design-ads.png" alt="WhyRing 宣传图 - 强大规则引擎，自动生成闹钟排期" class="promo-img">
     </section>
 
     <section class="grid">
@@ -172,6 +256,44 @@
           <li>上四休三、上四休四等轮班</li>
           <li>完全自定义的排班规则</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="card screenshots">
+      <h2>应用截图</h2>
+      <div class="screenshots-scroll">
+        <div class="shot">
+          <img src="./images/2.png" alt="首页">
+          <div class="shot-label">首页 · 日历与倒计时</div>
+        </div>
+        <div class="shot">
+          <img src="./images/8.png" alt="临近闹钟">
+          <div class="shot-label">日历详情 · 临近闹钟</div>
+        </div>
+        <div class="shot">
+          <img src="./images/3.png" alt="闹钟管理">
+          <div class="shot-label">闹钟管理 · 规则方案</div>
+        </div>
+        <div class="shot">
+          <img src="./images/6.png" alt="闹钟分组">
+          <div class="shot-label">闹钟分组 · 列表</div>
+        </div>
+        <div class="shot">
+          <img src="./images/5.png" alt="方案详情">
+          <div class="shot-label">方案 · 关联规则组</div>
+        </div>
+        <div class="shot">
+          <img src="./images/4.png" alt="规则组">
+          <div class="shot-label">规则组 · 自定义规则</div>
+        </div>
+        <div class="shot">
+          <img src="./images/7.png" alt="同步预览">
+          <div class="shot-label">同步预览 · 日历预览</div>
+        </div>
+        <div class="shot">
+          <img src="./images/9.png" alt="临时闹钟">
+          <div class="shot-label">临时闹钟 · 响铃界面</div>
+        </div>
       </div>
     </section>
 
