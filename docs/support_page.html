@@ -30,6 +30,24 @@
       margin: 0 auto;
       padding: 48px 0 64px;
     }
+    nav {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(242, 138, 22, .13);
+      color: #8d4b00;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    nav a:hover { background: rgba(242, 138, 22, .22); }
     .hero {
       display: grid;
       gap: 16px;
@@ -80,6 +98,17 @@
       color: #8d4b00;
       font-weight: 700;
     }
+    .faq-item {
+      margin-bottom: 20px;
+    }
+    .faq-item:last-child {
+      margin-bottom: 0;
+    }
+    .faq-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #5a3d1e;
+    }
     footer {
       margin-top: 32px;
       color: var(--muted);
@@ -94,6 +123,12 @@
 </head>
 <body>
   <main>
+    <nav>
+      <a href="./index.html">首页</a>
+      <a href="./privacy_policy.html">隐私政策</a>
+      <a href="./support_page.html">技术支持</a>
+    </nav>
+
     <section class="hero">
       <span class="pill">技术支持</span>
       <h1>烦人的节假日闹钟</h1>
@@ -115,33 +150,84 @@
           <li>当前规则方案截图</li>
           <li>闹钟分组截图</li>
           <li>最近一次同步范围和同步结果</li>
+          <li>问题发生时间</li>
         </ul>
       </div>
     </section>
 
     <section class="card">
       <h2>常见问题</h2>
-      <p><strong>添加闹钟后为什么没有响？</strong></p>
-      <p>请确认已授权 AlarmKit，并在「闹钟管理」中手动执行「同步到系统」。新增或修改规则后，只有确认同步才会写入系统闹钟。</p>
 
-      <p><strong>为什么空白方案不能启用？</strong></p>
-      <p>空白方案没有节假日判断基准。方案至少需要关联并启用一个规则组后才能作为当前方案使用。</p>
+      <div class="faq-item">
+        <strong>Q1：为什么我添加了闹钟，但系统没有响？</strong>
+        <p>请检查是否完成以下步骤：已授权 AlarmKit；已点击「同步到系统」；同步预览无冲突；系统闹钟写入成功；手机没有关机，系统提醒没有被限制。</p>
+      </div>
 
-      <p><strong>App 会上传我的闹钟数据吗？</strong></p>
-      <p>当前版本不会上传你的闹钟规则、日历配置或方案数据。相关数据保存在设备本地。</p>
+      <div class="faq-item">
+        <strong>Q2：为什么修改规则后，旧闹钟还在？</strong>
+        <p>规则修改后需要重新同步。同步会按当前规则清理旧的系统闹钟并写入新的系统闹钟。</p>
+      </div>
 
-      <p><strong>节假日规则一定准确吗？</strong></p>
-      <p>App 会随版本维护内置规则，但节假日安排可能随官方公告变化。重要事项请以官方公告为准，并额外设置备用提醒。</p>
+      <div class="faq-item">
+        <strong>Q3：生成同步闹钟后，某个日期临时有变化怎么办？</strong>
+        <p>可以在首页规则日历中点击对应日期，查看当天已写入系统的闹钟列表，并只删除这一天不需要的闹钟。这样不会影响其他日期已经写入的闹钟。</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q4：为什么某天被判定成工作日或休息日？</strong>
+        <p>首页下一次闹钟和规则日历会显示命中的规则原因。若同一天命中多个规则组，按方案中的规则组排序决定最终结果；若在同一规则组内同时命中指定日期和周几/单双周/轮班规则，指定日期规则优先。</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q5：App 会自动更新未来所有节假日吗？</strong>
+        <p>App 会内置部分中国大陆节假日和补班规则。节假日规则可能随官方公告和 App 版本更新变化。重要日期请自行核对官方公告。</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q6：空白方案为什么不能启用？</strong>
+        <p>空白方案没有节假日判断基准。至少需要关联并启用一个规则组后，才能作为当前方案使用。</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q7：App 是否会上传我的闹钟数据？</strong>
+        <p>不会。当前版本的闹钟规则、分组、日历配置保存在设备本地，不会上传至服务器。</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q8：App 会影响系统时钟里已有的闹钟吗？</strong>
+        <p>不会。App 只管理由本 App 通过 AlarmKit 写入的系统闹钟，不读取或修改你在系统时钟 App 中手动创建的闹钟。</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q9：自定义铃声为什么不能用？</strong>
+        <p>自定义铃声需使用 App 支持且符合系统要求的音频格式，并且时长需小于 30 秒。若系统不接受该铃声，建议换用内置铃声或系统默认铃声。</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q10：同步范围应该选多久？</strong>
+        <p>范围越长，写入的确定化系统闹钟越多，也更依赖系统容量。日常建议选择能覆盖近期使用的范围，规则或闹钟有变化时再重新同步。</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>使用限制与风险提示</h2>
+      <ul>
+        <li>App 依赖 iOS AlarmKit 授权。</li>
+        <li>App 只管理由本 App 写入的系统闹钟。</li>
+        <li>系统限制、设备关机、权限关闭、静音、规则配置错误等因素可能导致提醒失败。</li>
+        <li>重要日程、考试、会议、医疗、出行等场景，请额外设置备用提醒。</li>
+      </ul>
     </section>
 
     <section class="card">
       <h2>相关页面</h2>
-      <p><a href="./privacy">隐私政策</a></p>
+      <p><a href="./privacy_policy.html">隐私政策</a></p>
+      <p><a href="./index.html">返回首页</a></p>
     </section>
 
     <footer>
-      <p>© 2026 BC·M</p>
-      <p>最后更新：2026-06-02</p>
+      <p>© 2026 汐 · 让时光留痕</p>
+      <p>最后更新：2026-06-06</p>
     </footer>
   </main>
 </body>

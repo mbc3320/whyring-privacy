@@ -27,6 +27,24 @@
       margin: 0 auto;
       padding: 44px 0 64px;
     }
+    nav {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(242, 138, 22, .13);
+      color: #8d4b00;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    nav a:hover { background: rgba(242, 138, 22, .22); }
     article {
       padding: 28px;
       background: var(--card);
@@ -54,6 +72,11 @@
     }
     .muted { color: var(--muted); }
     a { color: #9a5400; font-weight: 700; }
+    footer {
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: 14px;
+    }
     @media (max-width: 720px) {
       main { padding-top: 28px; }
       article { padding: 18px; border-radius: 16px; }
@@ -62,12 +85,25 @@
 </head>
 <body>
   <main>
+    <nav>
+      <a href="./index.html">首页</a>
+      <a href="./privacy_policy.html">隐私政策</a>
+      <a href="./support_page.html">技术支持</a>
+    </nav>
+
     <article>
       <h1>隐私政策</h1>
-      <p class="muted">烦人的节假日闹钟 | 生效日期：2026-06-02 | 版本：v1.0</p>
+      <p class="muted">烦人的节假日闹钟 | 生效日期：2026-06-06 | 版本：v1.0</p>
 
       <h2>1. 我们处理哪些数据</h2>
-      <p>当前版本会在设备本地保存闹钟分组、闹钟规则、规则方案、规则组关联关系、节假日规则、补班日规则和同步到系统闹钟的本地记录。</p>
+      <p>当前版本会在设备本地保存以下内容：</p>
+      <ul>
+        <li>闹钟分组、闹钟规则及其配置</li>
+        <li>规则方案、规则组及其关联关系</li>
+        <li>节假日规则、补班日规则</li>
+        <li>同步到系统闹钟的本地记录</li>
+        <li>同步批次日志、临时闹钟记录</li>
+      </ul>
 
       <h2>2. 数据存储位置</h2>
       <p>当前版本的业务数据保存在设备本地 SQLite 数据库中。本 App 不会把你的闹钟规则、日历配置或自定义规则上传到服务器。</p>
@@ -100,6 +136,10 @@
       <h2>10. 联系我们</h2>
       <p>如对本隐私政策有疑问，请联系：<a href="mailto:mobinchao@hotmail.com">mobinchao@hotmail.com</a></p>
     </article>
+
+    <footer>
+      <p>© 2026 汐 · 让时光留痕</p>
+    </footer>
   </main>
 </body>
 </html>

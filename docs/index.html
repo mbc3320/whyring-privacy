@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>烦人的节假日闹钟</title>
+  <meta name="description" content="烦人的节假日闹钟 - 让闹钟知道今天该不该响。面向中国大陆节假日、补班日、大小周、轮班等场景的本地智能闹钟工具。">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fff7e4;
+      --card: rgba(255, 255, 255, .82);
+      --text: #2f1f12;
+      --muted: #776655;
+      --accent: #f28a16;
+      --line: rgba(115, 77, 26, .14);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(255, 213, 115, .45), transparent 32rem),
+        linear-gradient(180deg, #fff8dd 0%, #ffe5a0 52%, #ffc36a 100%);
+      line-height: 1.65;
+    }
+    main {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 64px;
+    }
+    nav {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(242, 138, 22, .13);
+      color: #8d4b00;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    nav a:hover { background: rgba(242, 138, 22, .22); }
+    .hero {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .pill {
+      display: inline-flex;
+      min-height: 36px;
+      align-items: center;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(242, 138, 22, .13);
+      color: #8d4b00;
+      font-weight: 700;
+      width: fit-content;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 8vw, 64px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    .lead {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 18px;
+      margin: 0;
+    }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 24px;
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      color: #5a3d1e;
+    }
+    p { margin: 0 0 12px; }
+    a { color: #9a5400; font-weight: 700; }
+    .card {
+      padding: 24px;
+      margin-top: 16px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(158, 95, 0, .12);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    ul {
+      margin: 0 0 12px;
+      padding-left: 20px;
+    }
+    li { margin: 8px 0; }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .feature-item {
+      padding: 16px;
+      background: rgba(242, 138, 22, .06);
+      border-radius: 12px;
+      border: 1px solid rgba(242, 138, 22, .1);
+    }
+    .feature-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #8d4b00;
+    }
+    .feature-item span {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    footer {
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 720px) {
+      main { padding-top: 32px; }
+      .grid { grid-template-columns: 1fr; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .card { padding: 18px; border-radius: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav>
+      <a href="./index.html">首页</a>
+      <a href="./privacy_policy.html">隐私政策</a>
+      <a href="./support_page.html">技术支持</a>
+    </nav>
+
+    <section class="hero">
+      <span class="pill">Why Ring</span>
+      <h1>烦人的节假日闹钟</h1>
+      <p class="lead">让闹钟知道今天该不该响。面向中国大陆节假日、补班日、大小周、轮班等场景的本地智能闹钟工具。</p>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>核心特性</h2>
+        <ul>
+          <li><strong>隐私优先</strong>：数据保存在设备本地，不上传服务器</li>
+          <li><strong>无广告</strong>：纯净体验，无广告打扰</li>
+          <li><strong>无账号</strong>：无需注册，开箱即用</li>
+          <li><strong>本地优先</strong>：不依赖网络，离线可用</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>适用场景</h2>
+        <ul>
+          <li>春节、国庆等法定节假日调休</li>
+          <li>周末补班日特殊闹钟</li>
+          <li>双休 / 单休 / 大小周</li>
+          <li>上四休三、上四休四等轮班</li>
+          <li>完全自定义的排班规则</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>核心概念</h2>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <strong>规则方案</strong>
+          <span>一组规则组的组合，可为不同生活节奏创建不同方案（双休、单休、大小周等）。</span>
+        </div>
+        <div class="feature-item">
+          <strong>规则组</strong>
+          <span>用于判断某一天属于什么类型：工作日、补班日、休息日、法定节假日。</span>
+        </div>
+        <div class="feature-item">
+          <strong>闹钟分组</strong>
+          <span>决定某组闹钟在哪类日期响：工作日、休息日或每天。</span>
+        </div>
+        <div class="feature-item">
+          <strong>同步到系统</strong>
+          <span>变更先保存在本地，确认预览后通过 AlarmKit 写入 iOS 系统闹钟。</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>首次使用</h2>
+      <ol>
+        <li>打开 App，阅读欢迎说明、用户协议和隐私协议。</li>
+        <li>进入首页，查看当前日历方案和临近闹钟。</li>
+        <li>前往「闹钟管理」，新建分组并添加闹钟。</li>
+        <li>点击「同步到系统」，选择同步范围（建议 90 天）。</li>
+        <li>查看同步预览，确认后写入系统闹钟。</li>
+        <li>根据系统提示授权 AlarmKit。</li>
+      </ol>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>相关页面</h2>
+        <p><a href="./privacy_policy.html">隐私政策</a> — 了解我们如何保护你的数据</p>
+        <p><a href="./support_page.html">技术支持</a> — 常见问题与联系方式</p>
+      </div>
+      <div class="card">
+        <h2>联系我们</h2>
+        <p>遇到问题或有功能建议？</p>
+        <p><a href="mailto:mobinchao@hotmail.com">mobinchao@hotmail.com</a></p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 汐 · 让时光留痕</p>
+      <p>最后更新：2026-06-06</p>
+    </footer>
+  </main>
+</body>
+</html>
