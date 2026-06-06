@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>烦人的节假日闹钟 - 技术支持</title>
+  <meta name="description" content="烦人的节假日闹钟技术支持、常见问题和联系方式。">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fff7e4;
+      --card: rgba(255, 255, 255, .82);
+      --text: #2f1f12;
+      --muted: #776655;
+      --accent: #f28a16;
+      --line: rgba(115, 77, 26, .14);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(255, 213, 115, .45), transparent 32rem),
+        linear-gradient(180deg, #fff8dd 0%, #ffe5a0 52%, #ffc36a 100%);
+      line-height: 1.65;
+    }
+    main {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 64px;
+    }
+    .hero {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 8vw, 64px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 24px;
+    }
+    p { margin: 0 0 12px; }
+    a { color: #9a5400; font-weight: 700; }
+    .lead {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .card {
+      padding: 24px;
+      margin-top: 16px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(158, 95, 0, .12);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li { margin: 8px 0; }
+    .pill {
+      display: inline-flex;
+      min-height: 36px;
+      align-items: center;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(242, 138, 22, .13);
+      color: #8d4b00;
+      font-weight: 700;
+    }
+    footer {
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 720px) {
+      main { padding-top: 32px; }
+      .grid { grid-template-columns: 1fr; }
+      .card { padding: 18px; border-radius: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <span class="pill">技术支持</span>
+      <h1>烦人的节假日闹钟</h1>
+      <p class="lead">用于中国大陆节假日、补班日、双休、单休、大小周和自定义排班场景的本地智能闹钟工具。</p>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>联系我们</h2>
+        <p>如果你遇到同步失败、闹钟未触发、节假日判断异常或导入导出问题，请发送邮件。</p>
+        <p><a href="mailto:mobinchao@hotmail.com">mobinchao@hotmail.com</a></p>
+      </div>
+
+      <div class="card">
+        <h2>反馈时请附带</h2>
+        <ul>
+          <li>App 版本和 iOS 版本</li>
+          <li>设备型号</li>
+          <li>当前规则方案截图</li>
+          <li>闹钟分组截图</li>
+          <li>最近一次同步范围和同步结果</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>常见问题</h2>
+      <p><strong>添加闹钟后为什么没有响？</strong></p>
+      <p>请确认已授权 AlarmKit，并在「闹钟管理」中手动执行「同步到系统」。新增或修改规则后，只有确认同步才会写入系统闹钟。</p>
+
+      <p><strong>为什么空白方案不能启用？</strong></p>
+      <p>空白方案没有节假日判断基准。方案至少需要关联并启用一个规则组后才能作为当前方案使用。</p>
+
+      <p><strong>App 会上传我的闹钟数据吗？</strong></p>
+      <p>当前版本不会上传你的闹钟规则、日历配置或方案数据。相关数据保存在设备本地。</p>
+
+      <p><strong>节假日规则一定准确吗？</strong></p>
+      <p>App 会随版本维护内置规则，但节假日安排可能随官方公告变化。重要事项请以官方公告为准，并额外设置备用提醒。</p>
+    </section>
+
+    <section class="card">
+      <h2>相关页面</h2>
+      <p><a href="./privacy">隐私政策</a></p>
+    </section>
+
+    <footer>
+      <p>© 2026 BC·M</p>
+      <p>最后更新：2026-06-02</p>
+    </footer>
+  </main>
+</body>
+</html>
